@@ -5,7 +5,9 @@ export default defineNuxtConfig({
           htmlAttrs: { lang: "en" },
         },
       },
-      css: ["@/assets/styles/main.sass"],
+      css: ["@/assets/styles/main.sass",
+            "@/node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
+            ],
       vite: {
         css: {
           preprocessorOptions: {
