@@ -5,16 +5,20 @@ export default defineNuxtConfig({
           htmlAttrs: { lang: "en" },
         },
       },
-      css: ["@/assets/styles/main.sass",
+      css: [
             "@/node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
+            "@/node_modules/bootstrap-icons/font/bootstrap-icons.css",
+            "@/assets/styles/main.scss"
             ],
       vite: {
         css: {
           preprocessorOptions: {
-            sass: {
-              additionalData: '@import "@/assets/styles/_variables.sass"',
+            scss: {
+              additionalData: '@import "@/assets/styles/_variables.scss"',
             },
           },
         },
       },
+     
+
   })
