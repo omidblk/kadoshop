@@ -9,6 +9,7 @@ export default {
     
 }
 </script>
-<style lang="">
-    
+<style lang="sass" scoped>
+h1
+    color: $primary
 </style>
