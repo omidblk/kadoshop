@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .behind-header{
   height: 60px;
 }

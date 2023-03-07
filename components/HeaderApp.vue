@@ -1,5 +1,4 @@
 <template>
-    <div>
         <Header id="Header" class="header">
             <div class="container h-100">
                 <div class="row h-100">
@@ -34,7 +33,6 @@
                 </div>
             </div>
         </Header>
-    </div>
 </template>
 <script setup>
 
@@ -42,11 +40,13 @@
 <style lang="scss">
 @import '../assets/styles/main.scss';
 #Header{
+    position: fixed;
+    width: 100%;
     height: 60px;
     color: white;
     background-color: $secondary;
     z-index: 99;
-    position: fixed;
+    
     .logo{
         align-self: center;
         height: 50px;

@@ -17,6 +17,9 @@
 
 
 <style lang="scss">
-
+@import '../assets/styles/main.scss';
+h1{
+    color: $primary;
+}
 </style>
 
