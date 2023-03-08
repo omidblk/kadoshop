@@ -1,0 +1,33 @@
+// Main style 
+// Author : Omid Mokhtari 
+// Project : nuxt - kadoshop
+// Version : 1.0.0
+//
+;
+@import './variables';
+* {
+    direction: rtl;
+    border: none;
+
+}
+body{
+    margin: 0;
+    font-family: Vazir;
+    background-color: $primary;
+}
+
+ul {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    transition: all;
+    &:hover{
+        color: inherit;
+    }
+}
