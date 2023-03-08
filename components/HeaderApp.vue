@@ -3,19 +3,7 @@
             <div class="container h-100">
                 <div class="row h-100">
                     <img src="https://placehold.jp/180x50.png" alt="logo" class="logo col-md-3">
-                    <nav class="col-md-7 ">
-                        <ul class="navigation">
-                            <li><a href="#">خانه</a></li>
-                            <li><a href="#">خانه</a></li>
-                            <li><a href="#">خانه</a></li>
-                            <li><a href="#">خانه</a></li>
-                            <li><a href="#">خانه</a></li>
-                            <li><a href="#">خانه</a></li>
-                            
-                            
-                            
-                        </ul>
-                    </nav>
+                    <NavigationApp class="col-md-7"/>
                     <section class="col-md-2 user-info">
                         <a href="#">
                             <i class="bi bi-search fs-4"></i>
@@ -50,28 +38,6 @@
     .logo{
         align-self: center;
         height: 50px;
-    }
-    nav{
-        padding: 10px 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .navigation{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            li{
-                transition: all 500ms ease-in-out ;
-                a{
-                    padding: 10px 20px;
-                    font-size: 18px;
-                }
-                &:hover{
-                    margin: 0 20px;
-                }
-            }
-            
-        } 
     }
     .user-info{
         display: flex;
