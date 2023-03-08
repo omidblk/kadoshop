@@ -1,5 +1,4 @@
 <template>
-    <div>
         <footer>
             <div class="position-relative svges">
                 <div class="first-svg">
@@ -64,7 +63,7 @@
                                 <input type="text" class="w-100 rounded-end p-2" aria-label="Sizing example input"
                                     aria-describedby="inputGroup-sizing-default" placeholder="ادرس ایمیل خود را وارد کنید">
                             </div>
-                            <div>
+                            <div class="mb-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     width="559" height="298" viewBox="0 0 359 198">
                                     <defs>
@@ -84,10 +83,11 @@
                     </div>
                 </div>
             </section>
-
+            <div class="d-flex justify-content-center align-items-center p-3">
+                <p class="text-uppercase fs-4">طراحی شده توسط omidblk</p>
+            </div>
 
         </footer>
-    </div>
 </template>
 
 
