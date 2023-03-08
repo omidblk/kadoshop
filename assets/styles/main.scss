@@ -7,11 +7,13 @@
 @import './variables';
 * {
     direction: rtl;
+    border: none;
 
 }
 body{
     margin: 0;
     font-family: Vazir;
+    background-color: $primary;
 }
 
 ul {
