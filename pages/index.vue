@@ -1,14 +1,18 @@
 <template>
     <div>
         <SliderApp />
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h1>home Page</h1>
-                    
-                </div>
-            </div>
-        </div>
+        <section class="up-banners">
+            <BannerApp/>
+            <BannerApp/>
+            <BannerApp/>
+        </section>
+        <section class="between-banners">
+            <BannerApp/>
+            <BannerApp/>
+        </section>
+        <section class="down-banner">
+            <BannerApp/>
+        </section>
     </div>
 </template>
 <script setup>
@@ -18,8 +22,24 @@
 
 <style lang="scss">
 @import '../assets/styles/main.scss';
-h1{
-    color: $primary;
+.up-banners{
+    height:400px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    margin: 2rem 10rem;
 }
+.between-banners{
+    height:400px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    margin: 2rem 10rem;
+}
+.down-banner{
+    height:400px;
+    margin: 2rem 10rem;
+}
+
 </style>
 

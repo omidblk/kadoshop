@@ -106,6 +106,7 @@
 
 }
 .search-box {
+    z-index: 10;
     background-color: rgba($color: #eee, $alpha: 0.5) ;
     h3{
         color: $primary;
