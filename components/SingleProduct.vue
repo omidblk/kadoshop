@@ -107,7 +107,7 @@
 
     .information {
         .product-name {
-            background-color: #FCD2FF;
+            background-color: $third;
             border: 2px solid $primary;
 
             .name {
@@ -128,7 +128,7 @@
             padding-right: 40px;
 
             :nth-child(odd) {
-                background-color: #FCD2FF;
+                background-color: $third;
 
             }
 
@@ -154,7 +154,7 @@
 
             &:hover {
                 color: black;
-                background-color: #FCD2FF;
+                background-color: $third;
             }
 
         }
@@ -179,7 +179,7 @@
     grid-template-columns: 1fr 2fr;
 
     .labels {
-        background-color: #FCD2FF;
+        background-color: $third;
 
         a {
             width: 100%;

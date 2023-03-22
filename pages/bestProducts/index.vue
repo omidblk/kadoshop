@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>best Products Page</h1>
+        <ProductViwe/>
     </div>
 </template>
 <script>
