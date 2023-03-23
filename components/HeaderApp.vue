@@ -56,6 +56,15 @@
 
 
 }
+@media (max-width:500px) {
+    
+}
+@media (min-width:501px) and (max-width:768px) {
+    
+}
+@media (min-width:769px){
+
+}
         
 
 </style>
