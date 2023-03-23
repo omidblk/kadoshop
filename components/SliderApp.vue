@@ -34,8 +34,7 @@
             </button>
         </div>
         <section class="container onslider">
-            <div class="row">
-                <div class="search-box col-md-4 d-flex flex-column p-4 rounded text-center">
+                <div class="search-box d-flex flex-column p-4 rounded text-center">
                     <h3>یک خرید هوشمندانه</h3>
                     <p>اگر به دنبال یک کادوی خاص هستی جای درستی اومدی
                         ما شما را در خرید یک کادوی خوب کمک میکنیم</p>
@@ -44,8 +43,8 @@
                     <input class="form-control" type="text" placeholder="برای کی میخوای خرید کنی؟">
                     <button class="mt-1">جستجو کن</button>
                 </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-7 d-flex flex-column justify-content-end">
+                <!-- <div class="col-lg-1"></div> -->
+                <div class="d-flex flex-column justify-content-end">
                     <nav class="slider-nav d-flex justify-content-around rounded p-4">
                         <a class="d-flex flex-column p-2 rounded" href="#">
                             <img src="../assets/images/svgs/icons8-confetti-64.png" alt="">
@@ -64,8 +63,7 @@
                             <span class="mt-2">اکسسوری</span>
                         </a>
                     </nav>
-                </div>
-            </div>
+                </div> 
         </section>
     </div>
 </template>
@@ -102,7 +100,10 @@
 .onslider {
     position: absolute;
     top: 150px;
-    right: 100px;
+    right: 50px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 3rem;
 
 }
 
@@ -154,4 +155,6 @@
 
         }
     }
-}</style>
+}
+
+</style>
