@@ -26,8 +26,8 @@
                 <div class="container">
                     <div class="row">
                         <section class="col-md-6  d-flex flex-column justify-content-around">
-                            <h4 class="my-3">دسترسی سریع</h4>
-                            <ul class="navigation d-flex align-items-center">
+                            <h4 class="my-3 d-none d-l-block">دسترسی سریع</h4>
+                            <ul class="navigation d-none d-l-flex align-items-center">
                                 <li class=" m-2"><a class="p-3" href="#">خانه</a></li>
                                 <li class=" m-2"><a class="p-3" href="#">خانه</a></li>
                                 <li class=" m-2"><a class="p-3" href="#">خانه</a></li>

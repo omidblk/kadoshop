@@ -1,30 +1,17 @@
 <template>
     <div>
-        <SliderApp />
+        <SliderApp class="d-none d-md-block" />
         <div class="container">
-            <section class="up-banners">
-                <BannerApp />
-                <BannerApp />
-                <BannerApp />
+            <section class="banner-app">
+                <BannerApp class="first-line item1"/>
+                <BannerApp class="first-line item1"/>
+                <BannerApp class="first-line item1"/>
+                <BannerApp class="second-line"/>
+                <BannerApp class="second-line"/>
+                <BannerApp class="last-line"/>
             </section>
-            <section class="between-banners">
-                <BannerApp />
-                <BannerApp />
-            </section>
-            <section class="down-banner mb-5">
-                <BannerApp />
-            </section>
-
-            <!-- last-product -->
-            <BannerProducts />
-
-            <!-- best-product -->
-            <BannerProducts/>
-
-            <!-- best-product -->
-            <BannerProducts/>
-        
         </div>
+        
 
     </div>
 </template>
@@ -36,25 +23,56 @@
 <style lang="scss">
 @import '../assets/styles/main.scss';
 
-.up-banners {
-    height: 400px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin: 2rem 0;
+
+
+@media (max-width:500px) {
+    
 }
 
-.between-banners {
-    height: 400px;
+@media (min-width:501px) and (max-width:768px) {
+    .banner-app{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr ;
+    grid-auto-rows: 400px;
     gap: 2rem;
-    margin: 2rem 0;
+    }
 }
 
-.down-banner {
-    height: 400px;
-    margin: 2rem 0;
+@media (min-width:769px) {
+    .banner-app{
+    display: grid;
+    grid-template-columns: repeat(6,1fr) ;
+    grid-auto-rows: 400px;
+    gap: 2rem;
+    :nth-child(1){
+        grid-column: 1/3;
+    }
+    :nth-child(2){
+        grid-column: 3/5;
+    }
+    :nth-child(3){
+        grid-column: 5/7;
+    }
+    :nth-child(4){
+        grid-column: 1/4;
+    }
+    :nth-child(5){
+        grid-column: 4/7;
+    }
+    :nth-child(6){
+        grid-column: 1/7;
+    }
+}
+    
+
+
+}
+
+@media (min-width:992px) {
+    
+}
+@media (min-width:1200px) {
+
 }
 </style>
 

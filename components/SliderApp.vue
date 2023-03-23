@@ -14,10 +14,10 @@
                     <img src="../assets/images/slider/pexels-karolina-grabowska-4623043.jpg" class="d-block w-100 h-100"
                         alt="...">
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item h-100">
                     <img src="../assets/images/slider/pexels-rikonavt-3817038.jpg" class="d-block w-100 h-100" alt="...">
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item h-100">
                     <img src="../assets/images/slider/pexels-the-smell-of-roses-122734.jpg" class="d-block w-100 h-100"
                         alt="...">
                 </div>
@@ -156,5 +156,45 @@
         }
     }
 }
+@media (max-width:500px) {
+    .onslider {
+        width: 75%;
+    top: 80px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    }.carousel{
+        height: 100vh;
+    }
+}
 
+@media (min-width:501px) and (max-width:768px) {
+    .onslider {
+        width: 75%;
+    top: 80px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    }.carousel{
+        height: 100vh;
+    }
+}
+
+@media (min-width:769px) {
+    .onslider {
+    top: 80px;
+    right: 60px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    }
+    
+}
+
+@media (min-width:992px) {
+    .onslider {
+    top: 100px;
+    right: 60px;
+    grid-template-columns: 2fr 3fr;
+    gap: 5rem;
+
+}
+}
 </style>

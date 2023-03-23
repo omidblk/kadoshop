@@ -15,7 +15,7 @@
             <ProductCard/>
             <ProductCard/>
         </section>
-        <PaginationApp class="mt-4"/>
+        <PaginationApp class="mt-4 d-none d-md-block"/>
         
     </main>
 </template>
@@ -29,10 +29,20 @@
 .product-view{
     .products-view{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    // grid-template-columns: repeat(4,1fr);
     gap: 10px;
 }
 }
 
-    
+@media (min-width:769px) {
+    .products-view{
+    grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (min-width:992px) {
+    .products-view{
+    grid-template-columns: repeat(4,1fr);
+    }
+}   
 </style>
