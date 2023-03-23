@@ -14,8 +14,8 @@
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                     </span>
-                    <div class="d-flex justify-content-around align-items-center">
-                        <div class="product-images d-flex flex-column align-items-center bg-primary me-5">
+                    <div class="d-flex flex-column flex-md-row justify-content-around align-items-center">
+                        <div class="product-images d-flex flex-column align-items-center bg-primary md-me-5">
                             <img src="https://placehold.jp/310x310.png" alt="">
                             <div class="d-flex justify-content-between">
                                 <img src="https://placehold.jp/90x90.png" alt="">
@@ -29,7 +29,7 @@
                                 <h2 class="name">نام محصول</h2>
                                 <div class="icons fs-2 d-flex w-25 justify-content-around">
                                     <i class="bi bi-cart-plus-fill "></i>
-                                    <i class="bi bi-graph-up "></i>
+                                    <i class="bi bi-graph-up d-none d-md-flex"></i>
                                     <i class="bi bi-heart "></i>
                                 </div>
                             </div>
@@ -57,8 +57,8 @@
                 </article>
             </div>
             <div class="row">
-                <article class="more-information rounded mt-4">
-                    <section class="labels d-flex flex-column align-items-center">
+                <article class="more-information rounded mt-4 overflow-hidden">
+                    <section class="labels d-flex align-items-center">
                         <a href="#"  class="active"><h3>توضیحات</h3></a>
                         <a href="#"><h3>مشخصات</h3></a>
                         <a href="#"><h3>نظرات</h3></a>
@@ -176,7 +176,6 @@
     background-color: white;
     border: 2px solid $secondary;
     display: grid;
-    grid-template-columns: 1fr 2fr;
 
     .labels {
         background-color: $third;
@@ -199,4 +198,31 @@
         padding: 1.5rem;
         padding-right: 5rem;
     }
-}</style>
+}
+@media (min-width:501px) and (max-width:768px) {
+    .information{
+        margin-top: 20px;
+    }
+}
+
+@media (min-width:769px) {
+    .information{
+        margin-top: 20px;
+    }
+    .more-information {
+        grid-template-columns: 1fr 3fr;
+    }
+    
+}
+
+@media (min-width:992px) {
+    .information{
+        margin-right: 20px;
+    }
+    
+
+
+
+}
+
+</style>

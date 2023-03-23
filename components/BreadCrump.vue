@@ -1,5 +1,5 @@
 <template>
-    <section class="bread-crump d-flex my-2">
+    <section class="bread-crump d-none d-sm-flex my-2">
         <a class="mx-2" href="#"> صفحه اصلی</a>
         <span> / </span>
         <a class="mx-2" href="#"> صفحه اصلی</a>

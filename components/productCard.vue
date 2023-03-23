@@ -1,6 +1,6 @@
 <template>
     <article class="card rounded p-4 d-flex flex-column justify-content-between align-items-center">
-        <a href="#" class=" d-flex flex-column justify-content-center align-items-center">
+        <a href="#" class=" d-flex flex-column justify-content-center align-items-center p-4">
             <img src="https://placehold.jp/200x200.png" alt="">
             <h2 class="product-name my-3">رز جاویدان</h2>
             <div class="price w-100 d-flex justify-content-between">
@@ -16,8 +16,6 @@
                 <div class="time-left rounded"></div>
             </div>
         </div>
-
-
     </article>
 </template>
 
@@ -29,8 +27,6 @@
 @import "../assets/styles/main.scss";
 
 .card {
-    height: 500px;
-    width: 300px;
     box-shadow: $box-shadow ;
 
     .product-name {
@@ -45,26 +41,32 @@
             background-color: rgb(236, 78, 78);
         }
     }
-    button{
+
+    button {
         color: white;
         background-color: $secondary;
         transition: all .2s linear;
-        &:hover{
+
+        &:hover {
             color: black;
             background-color: $third;
         }
-        
+
     }
-    .time-offer{
+
+    .time-offer {
         direction: ltr;
-        .time-numeric{
+
+        .time-numeric {
             color: rgb(236, 78, 78);
 
         }
-        .time-bar{
+
+        .time-bar {
             background-color: bisque;
             direction: ltr;
-            .time-left{
+
+            .time-left {
                 height: 4px;
                 width: 50px;
                 background-color: rgb(236, 78, 78);
@@ -74,4 +76,5 @@
     }
 
 }
+
 </style>
