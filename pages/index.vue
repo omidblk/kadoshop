@@ -1,34 +1,24 @@
+<script setup>
+const list = await $fetch('/api/pagelist')
+console.log(list)
+</script>
+
+
 <template>
     <div>
         <SliderApp class="d-none d-md-block" />
         <div class="container">
             <section class="banner-app">
-                <BannerApp class="first-line item1"/>
-                <BannerApp class="first-line item1"/>
-                <BannerApp class="first-line item1"/>
-                <BannerApp class="second-line"/>
-                <BannerApp class="second-line"/>
-                <BannerApp class="last-line"/>
+                <BannerApp v-for="(item,index) in list.list" :key="index" :label="list.list[index].label" :address="list.list[index].address" :src="list.list[index].src"/>
             </section>
         </div>
         
 
     </div>
 </template>
-<script setup>
-
-</script>
-
 
 <style lang="scss">
 @import '../assets/styles/main.scss';
-
-
-
-@media (max-width:500px) {
-    
-}
-
 @media (min-width:501px) and (max-width:768px) {
     .banner-app{
     display: grid;
@@ -63,16 +53,7 @@
         grid-column: 1/7;
     }
 }
-    
-
-
 }
 
-@media (min-width:992px) {
-    
-}
-@media (min-width:1200px) {
-
-}
 </style>
 

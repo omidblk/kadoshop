@@ -1,10 +1,15 @@
+<script setup>
+const lists = await $fetch('/api/navbar')
+
+</script>
+
 <template>
     <Header id="Header" class="header">
         <div class="container h-100">
             <div class="row h-100">
                 <button class="hamber-menu col-2 d-md-none"><i class="bi bi-list fs-1 "></i></button>
                 <img src="https://placehold.jp/180x50.png" alt="logo" class="logo col-md-3 col-6">
-                <NavigationApp class="nav-bar  col-md-7 d-none d-md-flex" />
+                <NavigationApp class="nav-bar  col-md-7 d-none d-md-flex" :lists="lists"/>
                 <section class="col-md-2 col-4 user-info">
                     <a href="#">
                         <i class="bi bi-person-fill fs-4"></i>
@@ -20,9 +25,7 @@
         </div>
     </Header>
 </template>
-<script setup>
 
-</script>
 <style lang="scss">
 @import '../assets/styles/main.scss';
 

@@ -41,13 +41,6 @@
             }
         }
     }
-    .result{
-        .buttons-cart{
-            button{
-                
-            }
-        }
-    }
 
 }
 

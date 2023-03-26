@@ -1,3 +1,10 @@
+
+<script setup>
+const lists = await $fetch('/api/navbar')
+</script>
+
+
+
 <template>
     <div class="">
         <div id="carouselExampleIndicators" class="carousel slide position-relative">
@@ -43,36 +50,17 @@
                     <input class="form-control" type="text" placeholder="برای کی میخوای خرید کنی؟">
                     <button class="mt-1">جستجو کن</button>
                 </div>
-                <!-- <div class="col-lg-1"></div> -->
                 <div class="d-flex flex-column justify-content-end">
                     <nav class="slider-nav d-flex justify-content-around rounded p-4">
-                        <a class="d-flex flex-column p-2 rounded" href="#">
-                            <img src="../assets/images/svgs/icons8-confetti-64.png" alt="">
-                            <span class="mt-2">اکسسوری</span>
-                        </a>
-                        <a class="d-flex flex-column p-2 rounded" href="#">
-                            <img src="../assets/images/svgs/icons8-confetti-64.png" alt="">
-                            <span class="mt-2">اکسسوری</span>
-                        </a>
-                        <a class="d-flex flex-column p-2 rounded" href="#">
-                            <img src="../assets/images/svgs/icons8-confetti-64.png" alt="">
-                            <span class="mt-2">اکسسوری</span>
-                        </a>
-                        <a class="d-flex flex-column p-2 rounded" href="#">
-                            <img src="../assets/images/svgs/icons8-confetti-64.png" alt="">
-                            <span class="mt-2">اکسسوری</span>
-                        </a>
+                        <NuxtLink v-for="(item,index) in lists.list" :key="index" class="d-flex flex-column p-2 rounded" :to=item.address>
+                            <img  :src=item.icon alt="icon">
+                            <span class="mt-2 text-center h-100">{{ item.label }}</span>
+                        </NuxtLink>
                     </nav>
                 </div> 
         </section>
     </div>
 </template>
-
-
-<script setup>
-
-</script>
-
 
 <style lang="scss" >
 @import '../assets/styles/main.scss';
@@ -153,6 +141,10 @@
         &:hover {
             background-color: rgba($color: $primary, $alpha: 0.2);
 
+        }
+        img{
+            height: 96px;
+            width: 96px;
         }
     }
 }
