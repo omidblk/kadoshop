@@ -1,17 +1,18 @@
+<script setup>
+const props = defineProps(["label" , "address"  , "src"])
+
+</script>
+
 <template>
     <section class=" w-100 h-100 valentine-baner position-relative rounded overflow-hidden m-3">
-        <a href="#">
-            <img class="w-100 h-100 rounded d-inline" src="../assets/images/product/v3-640x640.jpg" alt="">
-            <span class="position-absolute bottom-0 start-0 m-4 px-3 rounded">ولنتاین</span>
+        <NuxtLink :to=address>
+            <img class="w-100 h-100 rounded d-inline" :src=src alt="">
+            <span class="position-absolute bottom-0 start-0 m-4 px-3 rounded">{{ label }}</span>
             <div class="w-100 h-100 filter position-absolute top-0 start-0"></div>
-        </a>
+        </NuxtLink>
     </section>
 </template>
 
-
-<script>
-
-</script>
 <style lang="scss">
 @import '../assets/styles/main.scss';
 

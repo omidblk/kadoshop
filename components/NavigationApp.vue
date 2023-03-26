@@ -1,18 +1,16 @@
+<script setup>
+// import { defineProps } from 'vue';
+const props = defineProps(['lists'])
+</script>
+
 <template>
     <nav class="col-lg-7 d-flex  ">
         <ul class="navigation d-flex justify-content-evenly align-items-center">
-            <li><a href="#">خانه</a></li>
-            <li><a href="#">خانه</a></li>
-            <li><a href="#">خانه</a></li>
-            <li><a href="#">خانه</a></li>
-            <li><a href="#">خانه</a></li>
-            <li><a href="#">خانه</a></li>
+            <li v-for="(item , index) in props.lists.navbar" :key="index"><NuxtLink :to= item.address >{{ item.label }}</NuxtLink></li>
         </ul>
     </nav>
 </template>
-<script>
 
-</script>
 <style lang="scss">
 nav {
     .navigation {
