@@ -1,6 +1,6 @@
 <template>
     <main class="product-view container d-flex flex-column align-items-center">
-        <BreadCrump class="align-self-start"/>
+        <LazyBreadCrump class="align-self-start"/>
         <section class="products-view mt-4">
             <ProductCard/>
             <ProductCard/>
@@ -15,7 +15,7 @@
             <ProductCard/>
             <ProductCard/>
         </section>
-        <PaginationApp class="mt-4 d-none d-md-block"/>
+        <LazyPaginationApp class="mt-4 d-none d-md-block"/>
         
     </main>
 </template>

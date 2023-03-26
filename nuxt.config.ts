@@ -10,6 +10,7 @@ export default defineNuxtConfig({
       ],
       htmlAttrs: { lang: "en" },
     },
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
   css: [
     "@/node_modules/bootstrap/dist/css/bootstrap.rtl.min.css",
