@@ -1,6 +1,7 @@
 <script setup>
-const list = await $fetch('/api/pagelist')
-console.log(list)
+const list = await $fetch('/api/pageList')
+const banner = await $fetch('/api/bannerInfo')
+
 </script>
 
 
@@ -11,6 +12,7 @@ console.log(list)
             <section class="banner-app">
                 <BannerApp v-for="(item,index) in list.list" :key="index" :label="list.list[index].label" :address="list.list[index].address" :src="list.list[index].src"/>
             </section>
+            <LazyBannerProducts v-for="(info,index) in banner.info" :key="index" :label="banner.info[index].label" :address="banner.info[index].address" />
         </div>
         
 
@@ -34,6 +36,7 @@ console.log(list)
     grid-template-columns: repeat(6,1fr) ;
     grid-auto-rows: 400px;
     gap: 2rem;
+    margin-bottom: 4rem;
     :nth-child(1){
         grid-column: 1/3;
     }

@@ -6,10 +6,10 @@ const lists = await $fetch('/api/navbar')
 <template>
     <Header id="Header" class="header">
         <div class="container h-100">
-            <div class="row h-100">
-                <button class="hamber-menu col-2 d-md-none"><i class="bi bi-list fs-1 "></i></button>
+            <div class="row h-100 d-md-flex justify-content-between">
+                <button class="hamber-menu col-2 d-lg-none"><i class="bi bi-list fs-1 "></i></button>
                 <img src="https://placehold.jp/180x50.png" alt="logo" class="logo col-md-3 col-6">
-                <NavigationApp class="nav-bar  col-md-7 d-none d-md-flex" :lists="lists"/>
+                <NavigationApp class="nav-bar col-auto d-none d-lg-flex" :lists="lists"/>
                 <section class="col-md-2 col-4 user-info">
                     <a href="#">
                         <i class="bi bi-person-fill fs-4"></i>
@@ -64,5 +64,12 @@ const lists = await $fetch('/api/navbar')
     }
 
 
+}
+@media (min-width:992px) and (max-width:1200px){
+   #Header{
+    .logo{
+        display: none;
+    }
+   } 
 }
 </style>

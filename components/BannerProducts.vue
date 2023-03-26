@@ -1,3 +1,7 @@
+<script setup>
+const props = defineProps(['label' , 'address'])
+</script>
+
 <template>
     <section class="last-product position-relative mb-4">
         <div class="last-products d-flex justify-content-around align-items-center rounded-end">
@@ -9,13 +13,11 @@
             </a>
         </div>
         <div class="label rounded-top d-flex justify-content-center align-items-center position-absolute">
-            <a class="text-center fs-4 rounded-top w-100 h-100 py-4" href="#">آخرین محصولات</a>
+            <NuxtLink class="text-center fs-4 rounded-top w-100 h-100 py-4" :to=address>{{ label }}</NuxtLink>
         </div>
     </section>
 </template>
-<script>
 
-</script>
 <style lang="scss">
 @import '../assets/styles/main.scss';
 
