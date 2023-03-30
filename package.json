@@ -14,9 +14,11 @@
     "sass-loader": "10.1.1"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.4.7",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
-    "bootstrap-vue": "^2.23.1"
+    "bootstrap-vue": "^2.23.1",
+    "pinia": "^2.0.33"
   }
 }

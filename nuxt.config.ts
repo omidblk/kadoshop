@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     "@/assets/styles/main.scss",
   ],
   modules: [
+    '@pinia/nuxt',
     
   ],
   vite: {
