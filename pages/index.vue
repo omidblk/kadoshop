@@ -1,6 +1,16 @@
 <script setup>
+import { useLastProducts } from '@/store/lastProducts'
+import { useProducts } from '@/store/product'
 const list = await $fetch('/api/pageList')
 const banner = await $fetch('/api/bannerInfo')
+const listOfProducts = []
+listOfProducts.push(useLastProducts().lastProducts)
+listOfProducts.push(useProducts().prefProducts)
+listOfProducts.push(useProducts().bestProducts)
+console.log(listOfProducts)
+
+
+
 
 </script>
 
@@ -10,9 +20,10 @@ const banner = await $fetch('/api/bannerInfo')
         <SliderApp class="d-none d-md-block" />
         <div class="container">
             <section class="banner-app">
-                <BannerApp v-for="(item,index) in list.list" :key="index" :label="list.list[index].label" :address="list.list[index].address" :src="list.list[index].src"/>
+                <BannerApp v-for="(item,index) in list.list" :key="index" :label="item.label" :address="item.address" :src="item.src"/>
             </section>
-            <LazyBannerProducts v-for="(info,index) in banner.info" :key="index" :label="banner.info[index].label" :address="banner.info[index].address" />
+            <LazyBannerProducts v-for="(info,index) in banner.info" :key="index" :label="banner.info[index].label" :address="banner.info[index].address" :products="listOfProducts[index]" />
+            
         </div>
         
 

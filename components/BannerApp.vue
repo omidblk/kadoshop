@@ -18,7 +18,7 @@ const props = defineProps(["label" , "address"  , "src"])
 
 .valentine-baner {
     .filter {
-        background-color: rgba(198, 146, 233, 0.5);
+        background-color: #dca90049;
         transition: all 500ms linear;
 
         &:hover {
