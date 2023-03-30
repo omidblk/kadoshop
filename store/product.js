@@ -30,4 +30,7 @@ export const useProducts = defineStore("products", {
       }
     },
   },
+  getters:{
+    
+  }
 });

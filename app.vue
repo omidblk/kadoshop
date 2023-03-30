@@ -1,6 +1,6 @@
 <script setup>
 import { useProducts} from '@/store/product';
-import { useLastProducts} from '@/store/lastProducts'
+import { useLastProducts } from '@/store/lastProducts'
 const products = useProducts();
 const lastProducts = useLastProducts();
 products.getposts();

@@ -1,5 +1,7 @@
-<script>
-
+<script setup>
+import { useProductCategories } from '@/store/productsCategories'
+const productsCategories = useProductCategories()
+productsCategories.categorizeProducts
 </script>
 
 <template>
