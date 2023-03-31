@@ -1,3 +1,20 @@
+<script setup>
+import { useLastProducts } from '@/store/lastProducts'
+import { useProducts } from '@/store/product'
+const list = await $fetch('/api/pageList')
+const banner = await $fetch('/api/bannerInfo')
+const listOfProducts = []
+const lastProducts = useLastProducts().lastProducts.slice(0, 5)
+const prefProducts = useProducts().prefProducts.slice(0, 5)
+const bestProducts = useProducts().bestProducts.slice(0, 5)
+listOfProducts.push(lastProducts)
+listOfProducts.push(prefProducts)
+listOfProducts.push(bestProducts)
+
+
+</script>
+
+
 <template>
     <div>
         <div class="container">
@@ -58,10 +75,16 @@
             </div>
             <div class="row">
                 <article class="more-information rounded mt-4 overflow-hidden">
-                    <section class="labels d-flex align-items-center">
-                        <a href="#"  class="active"><h3>توضیحات</h3></a>
-                        <a href="#"><h3>مشخصات</h3></a>
-                        <a href="#"><h3>نظرات</h3></a>
+                    <section class="labels d-flex align-items-center flex-md-column">
+                        <a href="#" class="active">
+                            <h3>توضیحات</h3>
+                        </a>
+                        <a href="#">
+                            <h3>مشخصات</h3>
+                        </a>
+                        <a href="#">
+                            <h3>نظرات</h3>
+                        </a>
                     </section>
                     <section class="viwe-info">
                         <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
@@ -84,16 +107,13 @@
                 </article>
             </div>
             <div class="row">
-                <BannerProducts class="mt-4"/>
-                <BannerProducts/>
-
+                <BannerProducts class="mt-4" v-for="(info, index) in banner.info" :key="index" :label="info.label"
+                    :address="info.address" :products="listOfProducts[index]" />
             </div>
         </div>
     </div>
 </template>
-<script>
 
-</script>
 <style lang="scss">
 @import '../assets/styles/main.scss';
 
@@ -199,30 +219,30 @@
         padding-right: 5rem;
     }
 }
+
 @media (min-width:501px) and (max-width:768px) {
-    .information{
+    .information {
         margin-top: 20px;
     }
 }
 
 @media (min-width:769px) {
-    .information{
+    .information {
         margin-top: 20px;
     }
+
     .more-information {
         grid-template-columns: 1fr 3fr;
     }
-    
+
 }
 
 @media (min-width:992px) {
-    .information{
+    .information {
         margin-right: 20px;
     }
-    
 
 
 
-}
 
-</style>
+}</style>

@@ -1,14 +1,17 @@
 <script setup>
 const props = defineProps(['label' , 'address' , 'products' ])
 
+
+
 </script>
 
 <template>
     <section class="last-product position-relative mb-4">
         <div class="last-products d-flex justify-content-around align-items-center rounded-end">
-            <NuxtLink v-for="(item,index) in products" :key="index" class="d-flex flex-column justify-content-between align-items-center my-3 " to="/" >
+            
+            <NuxtLink v-for="(item,index) in products" :key="index" class="d-flex flex-column justify-content-between align-items-center my-3 " :to="item.name" >
                 <img class="rounded" :src="item.imgSrc.first" alt="">
-                <p>{{ item.name }}</p>
+                <div class="product-name"><p>{{ item.name }}</p></div>
                 <span class="price">{{ item.price }} تومان</span>
                 <span>{{ item.rate }}</span>
             </NuxtLink>
@@ -30,6 +33,11 @@ const props = defineProps(['label' , 'address' , 'products' ])
         img{
             width: 150px;
             height: 150px;
+        }
+        .product-name{
+            width: 150px;
+            height: 40px;
+            overflow: hidden;
         }
 
         .price {
