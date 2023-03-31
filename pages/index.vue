@@ -4,9 +4,9 @@ import { useProducts } from '@/store/product'
 const list = await $fetch('/api/pageList')
 const banner = await $fetch('/api/bannerInfo')
 const listOfProducts = []
-const lastProducts = useLastProducts().lastProducts.slice(0,5)
-const prefProducts = useProducts().prefProducts.slice(0,5)
-const bestProducts = useProducts().bestProducts.slice(0,5)
+const lastProducts = useLastProducts().lastProducts.slice(0,4)
+const prefProducts = useProducts().prefProducts.slice(0,4)
+const bestProducts = useProducts().bestProducts.slice(0,4)
 listOfProducts.push(lastProducts)
 listOfProducts.push(prefProducts)
 listOfProducts.push(bestProducts)
