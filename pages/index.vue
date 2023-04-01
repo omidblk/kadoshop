@@ -4,10 +4,13 @@ import { useProducts } from '@/store/product'
 const list = await $fetch('/api/pageList')
 const banner = await $fetch('/api/bannerInfo')
 const listOfProducts = []
-listOfProducts.push(useLastProducts().lastProducts)
-listOfProducts.push(useProducts().prefProducts)
-listOfProducts.push(useProducts().bestProducts)
-console.log(listOfProducts)
+const lastProducts = useLastProducts().lastProducts.slice(0,4)
+const prefProducts = useProducts().prefProducts.slice(0,4)
+const bestProducts = useProducts().bestProducts.slice(0,4)
+listOfProducts.push(lastProducts)
+listOfProducts.push(prefProducts)
+listOfProducts.push(bestProducts)
+
 
 
 
@@ -22,7 +25,7 @@ console.log(listOfProducts)
             <section class="banner-app">
                 <BannerApp v-for="(item,index) in list.list" :key="index" :label="item.label" :address="item.address" :src="item.src"/>
             </section>
-            <LazyBannerProducts v-for="(info,index) in banner.info" :key="index" :label="banner.info[index].label" :address="banner.info[index].address" :products="listOfProducts[index]" />
+            <BannerProducts v-for="(info,index) in banner.info" :key="index" :label="info.label" :address="info.address" :products="listOfProducts[index]" />
             
         </div>
         

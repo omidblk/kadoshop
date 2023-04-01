@@ -1,5 +1,6 @@
 export default defineEventHandler((event)=>{
     return{
+        
         info:[
             {
                 label:"آخرین محصولات",

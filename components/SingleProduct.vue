@@ -1,3 +1,31 @@
+<script setup>
+//  banners
+import { useLastProducts } from '@/store/lastProducts'
+import { useProducts } from '@/store/product'
+const banner = await $fetch('/api/bannerInfo')
+const listOfProducts = []
+const lastProducts = useLastProducts().lastProducts.slice(0, 5)
+const prefProducts = useProducts().prefProducts.slice(0, 5)
+const bestProducts = useProducts().bestProducts.slice(0, 5)
+listOfProducts.push(lastProducts)
+listOfProducts.push(prefProducts)
+listOfProducts.push(bestProducts)
+
+// props
+const props = defineProps(['product'])
+
+//  button events
+let showExplain = ref(true)
+function explain(){
+    showExplain.value = false
+}
+
+
+
+
+</script>
+
+
 <template>
     <div>
         <div class="container">
@@ -15,18 +43,16 @@
                         <i class="bi bi-star-fill"></i>
                     </span>
                     <div class="d-flex flex-column flex-md-row justify-content-around align-items-center">
-                        <div class="product-images d-flex flex-column align-items-center bg-primary md-me-5">
-                            <img src="https://placehold.jp/310x310.png" alt="">
-                            <div class="d-flex justify-content-between">
-                                <img src="https://placehold.jp/90x90.png" alt="">
-                                <img src="https://placehold.jp/90x90.png" alt="">
-                                <img src="https://placehold.jp/90x90.png" alt="">
+                        <div class="product-images d-flex flex-column align-items-center md-me-5 gap-3">
+                            <img class="main-pic" :src="product.imgSrc.first" alt="">
+                            <div class="d-flex justify-content-between gap-2">
+                                <img class="small-pic" v-for="(item, index) in product.imgSrc" :key="index" :src="product.imgSrc[index]" alt="">
 
                             </div>
                         </div>
                         <section class="information flex-grow-1">
                             <div class="product-name d-flex justify-content-between align-items-center rounded p-2">
-                                <h2 class="name">نام محصول</h2>
+                                <h2 class="name">{{ product.name }}</h2>
                                 <div class="icons fs-2 d-flex w-25 justify-content-around">
                                     <i class="bi bi-cart-plus-fill "></i>
                                     <i class="bi bi-graph-up d-none d-md-flex"></i>
@@ -43,7 +69,7 @@
                                     <span>تحویل یک روزه : تهران</span>
                                     <span>رنگ بندی : </span>
                                     <span>بسته ویژه ساب رزا</span>
-                                    <span>قیمت : <span>30000 <span>تومان</span></span></span>
+                                    <span>قیمت : <span>{{ product.price }} <span>تومان</span></span></span>
                                 </div>
                                 <button class="addToCart rounded mt-2 py-3 w-100">+ افزودن به سبد خرید</button>
                                 <div
@@ -58,42 +84,34 @@
             </div>
             <div class="row">
                 <article class="more-information rounded mt-4 overflow-hidden">
-                    <section class="labels d-flex align-items-center">
-                        <a href="#"  class="active"><h3>توضیحات</h3></a>
-                        <a href="#"><h3>مشخصات</h3></a>
-                        <a href="#"><h3>نظرات</h3></a>
+                    <section class="labels d-flex align-items-center flex-md-column">
+                        <button @click="explain()" class="active">
+                            <h3>توضیحات</h3>
+                        </button>
+                        <button @click="">
+                            <h3>مشخصات</h3>
+                        </button>
+                        <button @click="">
+                            <h3>نظرات</h3>
+                        </button>
                     </section>
                     <section class="viwe-info">
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی
-                            مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
-                            درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری
-                            را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این
-                            صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و
-                            زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی
-                            اساسا مورد استفاده قرار گیرد.</p>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،
-                            چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی
-                            مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه
-                            درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری
-                            را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این
-                            صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و
-                            زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی
-                            اساسا مورد استفاده قرار گیرد.</p>
+                        <p v-show="showExplain">{{ product.information.caption }}</p>
+                        <p >{{ product.information.info }}</p>
+                        <div  class="show-comments">
+                            <CommentCard :comments="product.information.comments"/>
+                        </div>
                     </section>
                 </article>
             </div>
             <div class="row">
-                <BannerProducts class="mt-4"/>
-                <BannerProducts/>
-
+                <BannerProducts class="mt-4" v-for="(info, index) in banner.info" :key="index" :label="info.label"
+                    :address="info.address" :products="listOfProducts[index]" />
             </div>
         </div>
     </div>
 </template>
-<script>
 
-</script>
 <style lang="scss">
 @import '../assets/styles/main.scss';
 
@@ -103,6 +121,16 @@
 
     .grade {
         color: $primary;
+    }
+    .product-images{
+        .main-pic{
+            height: 300px;
+            width: 300px;
+        }
+        .small-pic{
+            height: 90px;
+            width: 90px;
+        }
     }
 
     .information {
@@ -180,7 +208,8 @@
     .labels {
         background-color: $third;
 
-        a {
+        button {
+            background-color: transparent;
             width: 100%;
             padding: 20px 0;
             text-align: center;
@@ -199,30 +228,30 @@
         padding-right: 5rem;
     }
 }
+
 @media (min-width:501px) and (max-width:768px) {
-    .information{
+    .information {
         margin-top: 20px;
     }
 }
 
 @media (min-width:769px) {
-    .information{
+    .information {
         margin-top: 20px;
     }
+
     .more-information {
         grid-template-columns: 1fr 3fr;
     }
-    
+
 }
 
 @media (min-width:992px) {
-    .information{
+    .information {
         margin-right: 20px;
     }
-    
 
 
 
-}
 
-</style>
+}</style>
