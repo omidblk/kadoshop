@@ -1,3 +1,6 @@
+<script setup>
+</script>
+
 <template>
     <section class="bread-crump d-none d-sm-flex my-2">
         <a class="mx-2" href="#"> صفحه اصلی</a>
@@ -10,9 +13,8 @@
         
     </section>
 </template>
-<script>
 
-</script>
+
 <style lang="scss">
 @import '../assets/styles/main.scss';
 .bread-crump{

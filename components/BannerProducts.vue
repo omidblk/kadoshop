@@ -9,7 +9,9 @@ const props = defineProps(['label', 'address', 'products'])
     <section class="widget-product position-relative mb-4">
         <div class="widget-products d-flex flex-column flex-md-row justify-content-around align-items-center">
             <NuxtLink v-for="(item, index) in products" :key="index"
-                class="d-flex flex-column justify-content-between align-items-center my-3 " :to="item.name">
+                class="d-flex flex-column justify-content-between align-items-center my-3 " :to="item.name"
+                
+                >
                 <img class="rounded" :src="item.imgSrc.first" alt="">
                 <div class="product-name">
                     <p>{{ item.name }}</p>
