@@ -36,6 +36,7 @@ const lists = await $fetch('/api/navbar')
     color: white;
     background-color: $secondary;
     z-index: 99;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.281);
 
     .logo {
         align-self: center;

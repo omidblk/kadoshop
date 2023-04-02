@@ -15,9 +15,15 @@ listOfProducts.push(bestProducts)
 const props = defineProps(['product'])
 
 //  button events
-let showExplain = ref(true)
-function explain(){
-    showExplain.value = false
+let showExplain = ref([true, false, false])
+function explain() {
+    showExplain.value = [true, false, false]
+}
+function info() {
+    showExplain.value = [false, true, false]
+}
+function comments() {
+    showExplain.value = [false, false, true]
 }
 
 
@@ -46,7 +52,8 @@ function explain(){
                         <div class="product-images d-flex flex-column align-items-center md-me-5 gap-3">
                             <img class="main-pic" :src="product.imgSrc.first" alt="">
                             <div class="d-flex justify-content-between gap-2">
-                                <img class="small-pic" v-for="(item, index) in product.imgSrc" :key="index" :src="product.imgSrc[index]" alt="">
+                                <img class="small-pic" v-for="(item, index) in product.imgSrc" :key="index"
+                                    :src="product.imgSrc[index]" alt="">
 
                             </div>
                         </div>
@@ -85,22 +92,28 @@ function explain(){
             <div class="row">
                 <article class="more-information rounded mt-4 overflow-hidden">
                     <section class="labels d-flex align-items-center flex-md-column">
-                        <button @click="explain()" class="active">
+                        <button @click="explain()" :class="{active: showExplain[0]}">
                             <h3>توضیحات</h3>
                         </button>
-                        <button @click="">
+                        <button @click="info()" :class="{active: showExplain[1]}">
                             <h3>مشخصات</h3>
                         </button>
-                        <button @click="">
+                        <button @click="comments()" :class="{active: showExplain[2]}">
                             <h3>نظرات</h3>
                         </button>
                     </section>
                     <section class="viwe-info">
-                        <p v-show="showExplain">{{ product.information.caption }}</p>
-                        <p >{{ product.information.info }}</p>
-                        <div  class="show-comments">
-                            <CommentCard :comments="product.information.comments"/>
-                        </div>
+                        <transition key="1" mode="out-in">
+                            <p v-show="showExplain[0]">{{ product.information.caption }}</p>
+                        </transition>
+                        <transition key="2" mode="out-in">
+                            <p v-show="showExplain[1]">{{ product.information.info }}</p>
+                        </transition>
+                        <transition key="3" mode="out-in">
+                            <div v-show="showExplain[2]" class="show-comments">
+                                <CommentCard :comments="product.information.comments" />
+                            </div>
+                        </transition>
                     </section>
                 </article>
             </div>
@@ -122,12 +135,14 @@ function explain(){
     .grade {
         color: $primary;
     }
-    .product-images{
-        .main-pic{
+
+    .product-images {
+        .main-pic {
             height: 300px;
             width: 300px;
         }
-        .small-pic{
+
+        .small-pic {
             height: 90px;
             width: 90px;
         }
@@ -226,6 +241,15 @@ function explain(){
     .viwe-info {
         padding: 1.5rem;
         padding-right: 5rem;
+
+        .v-enter-active {
+            transition: opacity 0.5s linear;
+        }
+
+        .v-enter-from,
+        .v-leave-to {
+            opacity: 0;
+        }
     }
 }
 
@@ -254,4 +278,5 @@ function explain(){
 
 
 
-}</style>
+}
+</style>
