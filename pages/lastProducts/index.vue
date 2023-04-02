@@ -1,13 +1,9 @@
+<script setup>
+import { useLastProducts } from '@/store/lastProducts'
+const lastProducts = useLastProducts().lastProducts
+</script>
 <template>
     <div>
-        <ProductViwe/>
+        <LazyProductViwe :products="lastProducts"/>
     </div>
 </template>
-<script>
-export default {
-    
-}
-</script>
-<style lang="">
-    
-</style>

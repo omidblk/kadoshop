@@ -1,13 +1,9 @@
+<script setup>
+import { useProducts } from '@/store/product'
+const prefProducts = useProducts().prefProducts
+</script>
 <template>
     <div>
-        <ProductViwe/>
+        <LazyProductViwe :products="prefProducts"/>
     </div>
 </template>
-<script>
-export default {
-    
-}
-</script>
-<style lang="">
-    
-</style>

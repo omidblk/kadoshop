@@ -1,7 +1,6 @@
 <script setup>
-import { useProducts } from '@/store/product'
-const bestProducts = useProducts().bestProducts
-console.log(bestProducts);
+const props = defineProps(["products"])
+
 </script>
 
 
@@ -9,9 +8,9 @@ console.log(bestProducts);
     <main class="product-view container d-flex flex-column align-items-center">
         <LazyBreadCrump class="align-self-start"/>
         <section class="products-view mt-4">
-            <LazyProductCard v-for="(item , index) in bestProducts" :key="index" :product="item"/>
+            <LazyProductCard v-for="(item , index) in products" :key="index" :product="item"/>
         </section>
-        <LazyPaginationApp v-if="bestProducts.length>20" class="mt-4 d-none d-md-block"/>
+        <LazyPaginationApp v-if="products.length>20" class="mt-4 d-none d-md-block"/>
         
     </main>
 </template>
