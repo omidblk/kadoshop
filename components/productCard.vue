@@ -1,33 +1,48 @@
+<script setup>
+const props = defineProps(['product'])
+function finalPrice(){
+    if (props.product.offer) {
+        const price = props.product.price
+        const offer = props.product.offer
+        return price-(price*(offer/100))
+    }else{
+        return props.product.price
+    }
+}
+
+
+</script>
+
 <template>
     <article class="card rounded p-4 d-flex flex-column justify-content-between align-items-center">
-        <a href="#" class=" d-flex flex-column justify-content-center align-items-center p-4">
-            <img src="https://placehold.jp/200x200.png" alt="">
-            <h2 class="product-name my-3">رز جاویدان</h2>
-            <div class="price w-100 d-flex justify-content-between">
-                <span class="fs-6 text-decoration-line-through">40000 تومان</span>
-                <span class="offer rounded-pill px-2 d-flex justify-content-center align-items-center">20%</span>
+        <NuxtLink :to="product.name" class="d-flex h-100 flex-column justify-content-center align-items-center p-4">
+            <img :src="product.imgSrc.first" alt="">
+            <h2 class="product-name my-3">{{ product.name }}</h2>
+            <div v-if="product.offer!=null" class="price w-100 d-flex justify-content-between">
+                <span class="fs-6 text-decoration-line-through">{{product.price}} تومان</span>
+                <span class="offer rounded-pill px-2 d-flex justify-content-center align-items-center">{{product.offer}}%</span>
             </div>
-            <span class="fs-5 mt-2">32000 تومان</span>
-        </a>
-        <button class="rounded m-4 w-100 py-2">+ افزودن به سبد خرید</button>
-        <div class="time-offer w-75">
+            <span class="final-price fs-5 mt-auto fw-1">{{finalPrice()}} تومان</span>
+        </NuxtLink>
+        <div v-if="product.offer!=null" class="time-offer w-75">
             <span class="time-numeric">04 : 15 : 27</span>
             <div class="time-bar w-100">
                 <div class="time-left rounded"></div>
             </div>
         </div>
+        <button class="rounded m-4 w-100 py-2">+ افزودن به سبد خرید</button>
     </article>
 </template>
-
-<script setup>
-</script>
-
 
 <style lang="scss">
 @import "../assets/styles/main.scss";
 
 .card {
     box-shadow: $box-shadow ;
+    img{
+        height: 200px;
+        width: 200px;
+    }
 
     .product-name {
         font-size: 1.5rem;
@@ -40,6 +55,9 @@
             color: white;
             background-color: rgb(236, 78, 78);
         }
+    }
+    .final-price{
+        color: $secondary;
     }
 
     button {

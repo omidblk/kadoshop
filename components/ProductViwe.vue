@@ -1,28 +1,20 @@
+<script setup>
+import { useProducts } from '@/store/product'
+const bestProducts = useProducts().bestProducts
+console.log(bestProducts);
+</script>
+
+
 <template>
     <main class="product-view container d-flex flex-column align-items-center">
         <LazyBreadCrump class="align-self-start"/>
         <section class="products-view mt-4">
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
+            <LazyProductCard v-for="(item , index) in bestProducts" :key="index" :product="item"/>
         </section>
-        <LazyPaginationApp class="mt-4 d-none d-md-block"/>
+        <LazyPaginationApp v-if="bestProducts.length>20" class="mt-4 d-none d-md-block"/>
         
     </main>
 </template>
-<script setup>
-
-</script>
-
 
 <style lang="scss">
 @import "../assets/styles/main.scss";
