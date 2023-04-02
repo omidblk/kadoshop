@@ -41,7 +41,6 @@ function comments() {
             <div class="row">
                 <article class="product-information d-flex flex-column p-5 rounded">
                     <span class="grade  ms-auto">
-
                         <i class="bi bi-star"></i>
                         <i class="bi bi-star-half"></i>
                         <i class="bi bi-star-fill"></i>

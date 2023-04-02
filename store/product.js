@@ -32,12 +32,15 @@ export const useProducts = defineStore("products", {
 
     //  find product
     findProduct(value) {
-      if (value) {
+      if (value != undefined) {
         for (let i = 0; i < this.products.length; i++) {
           if (this.products[i].name === value) {
+            this.current = this.products[i]
             return this.products[i];
           }
         }
+      }else{
+        return this.current
       }
     },
   },
