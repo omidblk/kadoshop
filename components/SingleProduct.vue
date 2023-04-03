@@ -26,8 +26,17 @@ function comments() {
     showExplain.value = [false, false, true]
 }
 //  images 
-const images = props.product.imgSrc
-console.log(images);
+const images = ref(props.product.imgSrc)
+function img2(){
+ const a = images.value.first
+ images.value.first = images.value.second
+ images.value.second = a
+}
+function img3(){
+ const a = images.value.first
+ images.value.first = images.value.third
+ images.value.third = a
+}
 </script>
 
 
@@ -48,11 +57,13 @@ console.log(images);
                     </span>
                     <div class="d-flex flex-column flex-md-row justify-content-around align-items-center">
                         <div class="product-images d-flex flex-column align-items-center md-me-5 gap-3">
-                            <img class="main-pic" :src="product.imgSrc.first" alt="">
+                            <img class="main-pic" :src="images.first" :alt="product.name">
                             <div class="d-flex justify-content-between gap-2">
-                                <img v-if="images.second!=null" class="small-pic" v-for="(item, index) in product.imgSrc" :key="index"
+                                <img class="small-pic" :src="images.first" :alt="product.name">
+                                <img @click="img2()" v-if="Object.keys(images).length > 1" class="small-pic" :src="images.second" :alt="product.name">
+                                <img @click="img3()" v-if="Object.keys(images).length > 2" class="small-pic" :src="images.third" :alt="product.name">
                                     
-                                    :src="product.imgSrc[index]" :alt="index">
+                                    
 
                             </div>
                         </div>
@@ -144,6 +155,7 @@ console.log(images);
         .small-pic {
             height: 90px;
             width: 90px;
+            cursor: pointer;
         }
     }
 
