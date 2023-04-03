@@ -171,7 +171,6 @@ export default defineEventHandler((event) => {
         imgSrc: {
           first: "/_nuxt/assets/images/products/2001/1.jpg",
           second: "/_nuxt/assets/images/products/2001/2.jpg",
-          third: "/_nuxt/assets/images/products/2001/3.jpg",
         },
         price: 109000,
         offer: null,
@@ -196,7 +195,6 @@ export default defineEventHandler((event) => {
         imgSrc: {
           first: "/_nuxt/assets/images/products/2002/1.jpg",
           second: "/_nuxt/assets/images/products/2002/2.jpg",
-          third: "/_nuxt/assets/images/products/2002/3.jpg",
         },
         price: 220000,
         offer: null,
@@ -221,7 +219,6 @@ export default defineEventHandler((event) => {
         imgSrc: {
           first: "/_nuxt/assets/images/products/2003/1.jpg",
           second: "/_nuxt/assets/images/products/2003/2.jpg",
-          third: "/_nuxt/assets/images/products/2003/3.jpg",
         },
         price: 185000,
         offer: null,
@@ -294,8 +291,6 @@ export default defineEventHandler((event) => {
         name: "جعبه هدیه با گردنبند ست",
         imgSrc: {
           first: "/_nuxt/assets/images/products/3003/1.jpg",
-          second: "/_nuxt/assets/images/products/3003/2.jpg",
-          third: "/_nuxt/assets/images/products/3003/3.jpg",
         },
         price: 210000,
         offer: null,
@@ -392,8 +387,6 @@ export default defineEventHandler((event) => {
         name: "رژگونه تراکوتا گلدن رز ",
         imgSrc: {
           first: "/_nuxt/assets/images/products/5001/1.jpg",
-          second: "/_nuxt/assets/images/products/5001/2.jpg",
-          third: "/_nuxt/assets/images/products/5001/3.jpg",
         },
         price: 450000,
         offer: 20,
@@ -426,8 +419,6 @@ export default defineEventHandler((event) => {
         name: "اسکراب لایه بردار صورت رینوزیت مناسب پوست چرب",
         imgSrc: {
           first: "/_nuxt/assets/images/products/5002/1.jpg",
-          second: "/_nuxt/assets/images/products/5002/2.jpg",
-          third: "/_nuxt/assets/images/products/5002/3.jpg",
         },
         price: 37000,
         offer: null,
@@ -486,8 +477,6 @@ export default defineEventHandler((event) => {
         name: "جعبه ی کادوی روز مرد",
         imgSrc: {
           first: "/_nuxt/assets/images/products/7001/1.jpg",
-          second: "/_nuxt/assets/images/products/7001/2.jpg",
-          third: "/_nuxt/assets/images/products/7001/3.jpg",
         },
         price: 165000,
         offer: 30,
@@ -510,8 +499,6 @@ export default defineEventHandler((event) => {
         name: "جعبه ی کوچک روز مرد",
         imgSrc: {
           first: "/_nuxt/assets/images/products/7002/1.jpg",
-          second: "/_nuxt/assets/images/products/7002/2.jpg",
-          third: "/_nuxt/assets/images/products/7002/3.jpg",
         },
         price: 115000,
         offer: 5,
@@ -559,7 +546,6 @@ export default defineEventHandler((event) => {
         imgSrc: {
           first: "/_nuxt/assets/images/products/7004/1.jpg",
           second: "/_nuxt/assets/images/products/7004/2.jpg",
-          third: "/_nuxt/assets/images/products/7004/3.jpg",
         },
         price: 465000,
         offer: null,
@@ -584,7 +570,6 @@ export default defineEventHandler((event) => {
         imgSrc: {
           first: "/_nuxt/assets/images/products/8001/1.jpg",
           second: "/_nuxt/assets/images/products/8001/2.jpg",
-          third: "/_nuxt/assets/images/products/8001/3.jpg",
         },
         price: 365000,
         offer: 28,
@@ -607,8 +592,6 @@ export default defineEventHandler((event) => {
         name: "ماگ مخصوص روز دختر",
         imgSrc: {
           first: "/_nuxt/assets/images/products/8002/1.jpg",
-          second: "/_nuxt/assets/images/products/8002/2.jpg",
-          third: "/_nuxt/assets/images/products/8002/3.jpg",
         },
         price: 65000,
         offer: 35,
@@ -632,8 +615,6 @@ export default defineEventHandler((event) => {
         name: "باکس طرح قلب مخصوص روز زن",
         imgSrc: {
           first: "/_nuxt/assets/images/products/9001/1.jpg",
-          second: "/_nuxt/assets/images/products/9001/2.jpg",
-          third: "/_nuxt/assets/images/products/9001/3.jpg",
         },
         price: 635000,
         offer: 10,
@@ -656,8 +637,6 @@ export default defineEventHandler((event) => {
         name: "باکس صورتی مخصوص روز زن",
         imgSrc: {
           first: "/_nuxt/assets/images/products/9002/1.jpg",
-          second: "/_nuxt/assets/images/products/9002/2.jpg",
-          third: "/_nuxt/assets/images/products/9002/3.jpg",
         },
         price: 335000,
         offer: 10,
@@ -680,8 +659,6 @@ export default defineEventHandler((event) => {
         name: "باکس رنگ قرمز مخصوص روز زن",
         imgSrc: {
           first: "/_nuxt/assets/images/products/9003/1.jpg",
-          second: "/_nuxt/assets/images/products/9003/2.jpg",
-          third: "/_nuxt/assets/images/products/9003/3.jpg",
         },
         price: 635000,
         offer: 10,
@@ -705,8 +682,6 @@ export default defineEventHandler((event) => {
         name: "تقویم دیواری مخصوص سالگرد ازدواج",
         imgSrc: {
           first: "/_nuxt/assets/images/products/11001/1.jpg",
-          second: "/_nuxt/assets/images/products/11001/2.jpg",
-          third: "/_nuxt/assets/images/products/11001/3.jpg",
         },
         price: 35000,
         offer: 10,
@@ -729,8 +704,6 @@ export default defineEventHandler((event) => {
         name: "باکس شکلات با طرح دلخواه",
         imgSrc: {
           first: "/_nuxt/assets/images/products/11002/1.jpg",
-          second: "/_nuxt/assets/images/products/11002/2.jpg",
-          third: "/_nuxt/assets/images/products/11002/3.jpg",
         },
         price: 235000,
         offer: 10,

@@ -25,10 +25,9 @@ function info() {
 function comments() {
     showExplain.value = [false, false, true]
 }
-
-
-
-
+//  images 
+const images = props.product.imgSrc
+console.log(images);
 </script>
 
 
@@ -51,8 +50,9 @@ function comments() {
                         <div class="product-images d-flex flex-column align-items-center md-me-5 gap-3">
                             <img class="main-pic" :src="product.imgSrc.first" alt="">
                             <div class="d-flex justify-content-between gap-2">
-                                <img class="small-pic" v-for="(item, index) in product.imgSrc" :key="index"
-                                    :src="product.imgSrc[index]" alt="">
+                                <img v-if="images.second!=null" class="small-pic" v-for="(item, index) in product.imgSrc" :key="index"
+                                    
+                                    :src="product.imgSrc[index]" :alt="index">
 
                             </div>
                         </div>
