@@ -1,13 +1,12 @@
 <script setup>
-import {useBirthday} from '@/store/birthday'
-useBirthday().getporducts()
-const birthdayProduct = useBirthday().products
-console.log(birthdayProduct);
+import {useMariiage} from '@/store/mariiage'
+useMariiage().getporducts()
+const marriageProduct = useMariiage().products
 
 </script>
 
 <template>
     <div>
-        <LazyProductViwe :products="birthdayProduct"/>
+        <LazyProductViwe :products="marriageProduct"/>
     </div>
 </template>
