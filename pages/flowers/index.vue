@@ -1,15 +1,13 @@
 <script setup>
-import { useProductCategories } from '@/store/productsCategories'
-const productsCategories = useProductCategories()
-productsCategories.categorizeProducts
+import {useBirthday} from '@/store/birthday'
+useBirthday().getporducts()
+const birthdayProduct = useBirthday().products
+console.log(birthdayProduct);
+
 </script>
 
 <template>
     <div>
-        <h1>flowers Page</h1>
+        <LazyProductViwe :products="birthdayProduct"/>
     </div>
 </template>
-
-<style lang="scss">
-    
-</style>

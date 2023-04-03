@@ -1,5 +1,11 @@
 <script setup>
+import { useProducts} from '@/store/product';
+import { useLastProducts } from '@/store/lastProducts'
 const lists = await $fetch('/api/navbar')
+const products = useProducts();
+const lastProducts = useLastProducts();
+products.getposts();
+lastProducts.getLastProducts();
 
 </script>
 
