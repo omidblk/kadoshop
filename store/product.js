@@ -32,13 +32,11 @@ export const useProducts = defineStore("products", {
 
     //  find product
     findProduct(value) {
-      if (value) {
-        for (let i = 0; i < this.products.length; i++) {
+        for (let i = 0; i < Object.keys(this.products).length; i++) {
           if (this.products[i].name === value) {
             return this.products[i];
           }
         }
-      }
     },
   },
   getters: {},

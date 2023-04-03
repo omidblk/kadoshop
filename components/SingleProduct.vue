@@ -25,10 +25,18 @@ function info() {
 function comments() {
     showExplain.value = [false, false, true]
 }
-
-
-
-
+//  images 
+const images = ref(props.product.imgSrc)
+function img2() {
+    const a = images.value.first
+    images.value.first = images.value.second
+    images.value.second = a
+}
+function img3() {
+    const a = images.value.first
+    images.value.first = images.value.third
+    images.value.third = a
+}
 </script>
 
 
@@ -41,7 +49,6 @@ function comments() {
             <div class="row">
                 <article class="product-information d-flex flex-column p-5 rounded">
                     <span class="grade  ms-auto">
-
                         <i class="bi bi-star"></i>
                         <i class="bi bi-star-half"></i>
                         <i class="bi bi-star-fill"></i>
@@ -50,11 +57,15 @@ function comments() {
                     </span>
                     <div class="d-flex flex-column flex-md-row justify-content-around align-items-center">
                         <div class="product-images d-flex flex-column align-items-center md-me-5 gap-3">
-                            <img class="main-pic" :src="product.imgSrc.first" alt="">
+                            <transition key="1" mode="out-in">
+                                <img class="main-pic" :src="images.first" :alt="product.name">
+                            </transition>
                             <div class="d-flex justify-content-between gap-2">
-                                <img class="small-pic" v-for="(item, index) in product.imgSrc" :key="index"
-                                    :src="product.imgSrc[index]" alt="">
-
+                                <img class="small-pic" :src="images.first" :alt="product.name">
+                                <img @click="img2()" v-if="Object.keys(images).length > 1" class="small-pic"
+                                    :src="images.second" :alt="product.name">
+                                <img @click="img3()" v-if="Object.keys(images).length > 2" class="small-pic"
+                                    :src="images.third" :alt="product.name">
                             </div>
                         </div>
                         <section class="information flex-grow-1">
@@ -92,13 +103,13 @@ function comments() {
             <div class="row">
                 <article class="more-information rounded mt-4 overflow-hidden">
                     <section class="labels d-flex align-items-center flex-md-column">
-                        <button @click="explain()" :class="{active: showExplain[0]}">
+                        <button @click="explain()" :class="{ active: showExplain[0] }">
                             <h3>توضیحات</h3>
                         </button>
-                        <button @click="info()" :class="{active: showExplain[1]}">
+                        <button @click="info()" :class="{ active: showExplain[1] }">
                             <h3>مشخصات</h3>
                         </button>
-                        <button @click="comments()" :class="{active: showExplain[2]}">
+                        <button @click="comments()" :class="{ active: showExplain[2] }">
                             <h3>نظرات</h3>
                         </button>
                     </section>
@@ -145,6 +156,7 @@ function comments() {
         .small-pic {
             height: 90px;
             width: 90px;
+            cursor: pointer;
         }
     }
 

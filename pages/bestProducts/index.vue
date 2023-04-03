@@ -1,10 +1,9 @@
+<script setup>
+import { useProducts } from '@/store/product'
+const bestProducts = useProducts().bestProducts
+</script>
 <template>
     <div>
-        <LazyProductViwe/>
+        <LazyProductViwe :products="bestProducts"/>
     </div>
 </template>
-
-
-<style lang="">
-    
-</style>

@@ -1,15 +1,12 @@
 <script setup>
+
+const route = useRoute()
 </script>
 
 <template>
     <section class="bread-crump d-none d-sm-flex my-2">
-        <a class="mx-2" href="#"> صفحه اصلی</a>
-        <span> / </span>
-        <a class="mx-2" href="#"> صفحه اصلی</a>
-        <span> / </span>
-        <a class="mx-2" href="#"> صفحه اصلی</a>
-        <span> / </span>
-        <a class="mx-2 active" href="#"> صفحه اصلی</a>
+        <NuxtLink to="/">صفحه اصلی</NuxtLink>
+        <NuxtLink class="active" :to="route.path">{{ route.path }}</NuxtLink>
         
     </section>
 </template>

@@ -7,6 +7,6 @@ const data = products.findProduct(route.params.name)
 </script>
 <template>
     <div>
-        <SingleProduct :product="data"/>
+        <SingleProduct :product="data" />
     </div>
 </template>

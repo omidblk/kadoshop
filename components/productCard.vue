@@ -9,13 +9,13 @@ function finalPrice(){
         return props.product.price
     }
 }
-
+const address = useRoute().path+'/'+props.product.name
 
 </script>
 
 <template>
     <article class="card rounded p-4 d-flex flex-column justify-content-between align-items-center">
-        <NuxtLink :to="product.name" class="d-flex h-100 flex-column justify-content-center align-items-center p-4">
+        <NuxtLink :to="address" class="d-flex h-100 flex-column justify-content-center align-items-center p-4">
             <img :src="product.imgSrc.first" alt="">
             <h2 class="product-name my-3">{{ product.name }}</h2>
             <div v-if="product.offer!=null" class="price w-100 d-flex justify-content-between">
