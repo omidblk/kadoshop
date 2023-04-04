@@ -1,4 +1,6 @@
 <script setup>
+import { useCart } from '~~/store/cart';
+import swal from 'sweetalert';
 const props = defineProps(['product'])
 function finalPrice(){
     if (props.product.offer) {
@@ -10,6 +12,15 @@ function finalPrice(){
     }
 }
 const address = useRoute().path+'/'+props.product.name
+function addToCart(product){
+    useCart().addToCart(product)
+    swal({
+        title: "عالی",
+        text: "با موفقیت به سبد خرید اضافه شد !",
+        icon: "success",
+        button: "ادامه"
+    })
+}
 
 </script>
 
@@ -30,7 +41,7 @@ const address = useRoute().path+'/'+props.product.name
                 <div class="time-left rounded"></div>
             </div>
         </div>
-        <button class="rounded m-4 w-100 py-2">+ افزودن به سبد خرید</button>
+        <button @click="addToCart(product)" class="rounded m-4 w-100 py-2">+ افزودن به سبد خرید</button>
     </article>
 </template>
 

@@ -20,9 +20,9 @@ lastProducts.getLastProducts();
                     <a href="#">
                         <i class="bi bi-person-fill fs-4"></i>
                     </a>
-                    <a href="#">
+                    <NuxtLink to="/cart">
                         <i class="bi bi-cart-fill fs-4"></i>
-                    </a>
+                    </NuxtLink>
                     <a href="#">
                         <i class="bi bi-heart-fill fs-4 d-none d-sm-flex"></i>
                     </a>

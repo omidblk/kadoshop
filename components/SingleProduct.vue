@@ -1,7 +1,9 @@
 <script setup>
+import swal from 'sweetalert';
 //  banners
 import { useLastProducts } from '@/store/lastProducts'
 import { useProducts } from '@/store/product'
+import { useCart } from '~~/store/cart';
 const banner = await $fetch('/api/bannerInfo')
 const listOfProducts = []
 const lastProducts = useLastProducts().lastProducts.slice(0, 5)
@@ -14,7 +16,8 @@ listOfProducts.push(bestProducts)
 // props
 const props = defineProps(['product'])
 
-//  button events
+////////     button events
+// info buttons
 let showExplain = ref([true, false, false])
 function explain() {
     showExplain.value = [true, false, false]
@@ -25,18 +28,29 @@ function info() {
 function comments() {
     showExplain.value = [false, false, true]
 }
-//  images 
-const images = ref(props.product.imgSrc)
-function img2() {
-    const a = images.value.first
-    images.value.first = images.value.second
-    images.value.second = a
-}
-function img3() {
-    const a = images.value.first
-    images.value.first = images.value.third
-    images.value.third = a
-}
+// add to cart button
+function addToCart(product) {
+    useCart().addToCart(product)
+    swal({
+        title: "عالی",
+        text: "با موفقیت به سبد خرید اضافه شد !",
+        icon: "success",
+        button: "ادامه"
+    })
+};
+
+    /////////  images 
+    const images = ref(props.product.imgSrc)
+    function img2() {
+        const a = images.value.first
+        images.value.first = images.value.second
+        images.value.second = a
+    }
+    function img3() {
+        const a = images.value.first
+        images.value.first = images.value.third
+        images.value.third = a
+    }
 </script>
 
 
@@ -72,7 +86,7 @@ function img3() {
                             <div class="product-name d-flex justify-content-between align-items-center rounded p-2">
                                 <h2 class="name">{{ product.name }}</h2>
                                 <div class="icons fs-2 d-flex w-25 justify-content-around">
-                                    <i class="bi bi-cart-plus-fill "></i>
+                                    <i @click="addToCart(product)" class="bi bi-cart-plus-fill "></i>
                                     <i class="bi bi-graph-up d-none d-md-flex"></i>
                                     <i class="bi bi-heart "></i>
                                 </div>
@@ -89,7 +103,8 @@ function img3() {
                                     <span>بسته ویژه ساب رزا</span>
                                     <span>قیمت : <span>{{ product.price }} <span>تومان</span></span></span>
                                 </div>
-                                <button class="addToCart rounded mt-2 py-3 w-100">+ افزودن به سبد خرید</button>
+                                <button @click="addToCart(product)" class="addToCart rounded mt-2 py-3 w-100">+ افزودن به
+                                    سبد خرید</button>
                                 <div
                                     class="label rounded-top d-flex justify-content-center align-items-center position-absolute">
                                     <a class="text-center fs-4 rounded-top w-100 h-100 py-2" href="#">اطلاعات محصول</a>
@@ -171,6 +186,13 @@ function img3() {
 
             .icons {
                 color: $secondary;
+                i{
+                    transition: all .2s ease-in;
+                    cursor: pointer;
+                    &:hover{
+                        color: $primary;
+                    }
+                }
             }
         }
     }
