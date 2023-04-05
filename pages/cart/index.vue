@@ -17,7 +17,7 @@ function remove(id) {
 function checkout() {
     swal({
         title: "عالی",
-        text: "با موفقیت به سبد خرید اضافه شد !",
+        text: "خرید شما با موفقیت ثبت شد !",
         icon: "success",
         button: "ادامه"
     })
