@@ -4,6 +4,7 @@ import swal from 'sweetalert';
 import { useLastProducts } from '@/store/lastProducts'
 import { useProducts } from '@/store/product'
 import { useCart } from '~~/store/cart';
+import { useFavorites } from '~~/store/favorites';
 const banner = await $fetch('/api/bannerInfo')
 const listOfProducts = []
 const lastProducts = useLastProducts().lastProducts.slice(0, 5)
@@ -34,6 +35,17 @@ function addToCart(product) {
     swal({
         title: "عالی",
         text: "با موفقیت به سبد خرید اضافه شد !",
+        icon: "success",
+        button: "ادامه"
+    })
+};
+
+// add to favorites
+function addToFavorites(product) {
+    useFavorites().addToFavorites(product)
+    swal({
+        title: "عالی",
+        text: "با موفقیت به علاقه مندی ها اضافه شد !",
         icon: "success",
         button: "ادامه"
     })
@@ -88,7 +100,7 @@ function addToCart(product) {
                                 <div class="icons fs-2 d-flex w-25 justify-content-around">
                                     <i @click="addToCart(product)" class="bi bi-cart-plus-fill "></i>
                                     <i class="bi bi-graph-up d-none d-md-flex"></i>
-                                    <i class="bi bi-heart "></i>
+                                    <i @click="addToFavorites(product)" class="bi bi-heart "></i>
                                 </div>
                             </div>
 

@@ -23,9 +23,9 @@ lastProducts.getLastProducts();
                     <NuxtLink to="/cart">
                         <i class="bi bi-cart-fill fs-4"></i>
                     </NuxtLink>
-                    <a href="#">
+                    <NuxtLink to="/favorite">
                         <i class="bi bi-heart-fill fs-4 d-none d-sm-flex"></i>
-                    </a>
+                    </NuxtLink>
                 </section>
             </div>
         </div>

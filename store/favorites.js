@@ -8,13 +8,7 @@ export const useFavorites = defineStore("FavoriteProducts", {
   },
   actions: {
     addToFavorites(product) {
-      for (let i = 0; i < this.products.length; i++) {
-        if (this.products[i] == product) {
-          break;
-        } else {
           this.products.push(product);
-        }
-      }
     },
     removeFromFav(id) {
       for (let i = 0; i < this.products.length; i++) {
@@ -22,9 +16,6 @@ export const useFavorites = defineStore("FavoriteProducts", {
           this.products.splice(i, 1);
         }
       }
-    },
-    checkout() {
-      this.products = [];
     },
   },
 });
