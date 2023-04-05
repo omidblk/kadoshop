@@ -2,10 +2,23 @@
 /* colors */
   
 $primary :#DCA800 ;
-$secondary : #AB37B4;
+$secondary : #812588;
 $third : #FCD2FF;
 $box-shadow : 5px 5px 10px rgba(0, 0, 0, 0.2) ;
-
+.swal-overlay {
+    background-color: #81258859;
+}
+.swal-button {
+    width: 100%;
+    padding: 10px 3rem;
+    border-radius: 6px;
+    background-color: #812588;
+    font-size: 12px;
+    
+}
+.swal-footer{
+    text-align: center;
+}
 /*  font */
 @font-face {
     font-family: Vazir;
