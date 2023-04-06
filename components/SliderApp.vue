@@ -18,14 +18,14 @@ const lists = await $fetch('/api/navbar')
             </div>
             <div class="carousel-inner  h-100">
                 <div class="carousel-item active  h-100">
-                    <img src="../assets/images/slider/pexels-karolina-grabowska-4623043.jpg" class="d-block w-100 h-100"
+                    <img src="../assets/images/slider/first.jpg" class="d-block w-100 h-100"
                         alt="...">
                 </div>
                 <div class="carousel-item h-100">
-                    <img src="../assets/images/slider/pexels-rikonavt-3817038.jpg" class="d-block w-100 h-100" alt="...">
+                    <img src="../assets/images/slider/second.jpg" class="d-block w-100 h-100" alt="...">
                 </div>
                 <div class="carousel-item h-100">
-                    <img src="../assets/images/slider/pexels-the-smell-of-roses-122734.jpg" class="d-block w-100 h-100"
+                    <img src="../assets/images/slider/third.jpg" class="d-block w-100 h-100"
                         alt="...">
                 </div>
             </div>
