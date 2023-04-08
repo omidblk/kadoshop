@@ -19,14 +19,14 @@ const lists = await $fetch('/api/navbar')
             <div class="carousel-inner  h-100">
                 <div class="carousel-item active  h-100">
                     <img src="@/assets/images/slider/first.jpg" class="d-block w-100 h-100"
-                        alt="...">
+                        alt=".slider-pictures">
                 </div>
                 <div class="carousel-item h-100">
-                    <img src="@/assets/images/slider/second.jpg" class="d-block w-100 h-100" alt="...">
+                    <img src="@/assets/images/slider/second.jpg" class="d-block w-100 h-100" alt=".slider-pictures">
                 </div>
                 <div class="carousel-item h-100">
                     <img src="@/assets/images/slider/third.jpg" class="d-block w-100 h-100"
-                        alt="...">
+                        alt="slider-pictures.">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
