@@ -18,7 +18,7 @@ function showMobileMenu() {
 </script>
 
 <template>
-    <Header id="Header" class="header">
+    <header id="Header" class="header">
         <div class="container h-100">
             <div class="row h-100 d-md-flex justify-content-between">
                 <button @click="showMobileMenu()" class="hamber-menu col-2 d-lg-none"><i
@@ -45,7 +45,7 @@ function showMobileMenu() {
                 </div>
             </div>
         </transition>
-    </Header>
+    </header>
 </template>
 
 <style lang="scss">
