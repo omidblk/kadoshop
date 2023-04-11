@@ -1,7 +1,7 @@
 <script setup>
 import { useLastProducts } from '@/store/lastProducts'
 import { useProducts } from '@/store/product'
-const list = await $fetch('/api/pageList')
+const list = await $fetch('/api/pagelist')
 const banner = await $fetch('/api/bannerInfo')
 const listOfProducts = []
 const lastProducts = useLastProducts().lastProducts.slice(0,4)
